@@ -1,0 +1,113 @@
+/*General lay-out parametres: font size, font family,...*/
+body {
+  background-color: #EFF3F4;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  line-height: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-weight: normal;
+}
+
+h3, h4 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+.moviepic {
+  width: auto;
+  height: 60%;
+}
+
+button {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 14px 30px 14px 30px;
+  /*Place button in the center of the screen*/
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bio > img {
+  border-radius: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border: 5px solid #EFF3F4;
+  margin-top: 20px;
+}
+
+/*Define grid container and parameters*/
+.total {
+  display: grid;
+  grid-template-columns: 40%;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 20px;
+  justify-content: center;
+  grid-template-areas: "b"
+                       "s"
+                       "m"
+}
+/*First grid item: class "bio"*/
+.bio {
+  grid-area: b;
+  border: 3px ridge #EFF3F4;
+  background-color: #FFFFFF;
+  padding: 15px;
+}
+/*Second grid item: ul: diplayed as a FlexBox row to have all icons next to
+  each other*/
+ul {
+  grid-area: s;
+  border: 3px ridge #EFF3F4;
+  background-color: #FFFFFF;
+  padding: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+}
+    /*Remove bullets and change position and lay-out of list items*/
+    li {
+      text-decoration: none;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /*Remove underline and change color of hyperlinks*/
+    a {
+        color: #C4C4C4;
+        text-decoration: none;
+    }
+    /*Increase size of socila icons*/
+    .fab {
+      font-size: 24px;
+    }
+/*Third grid item: class "fav_movies"*/
+.fav_movies {
+  grid-area: m;
+  border: 3px ridge #EFF3F4;
+  background-color: #FFFFFF;
+  padding: 15px;
+}
+/*Split the images (movie posters) and movie summaries (text) into 2 columns
+  by displaying them in a grid so that the text appears next to each image*/
+.movie_sum {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
